@@ -10,66 +10,44 @@ static class AssemblerInsert
 public:
     static void ArraySortBubble(int* arr, int n)
     {
-        int currentIterFirst = 1; // Счётчик внутреннего цикла
-        int f = 0;                 // Флаг остановки сортировки
+        int currentIterFirst = 1; // Счётчик внешнего цикла
         int itersSecondCycle = 0; //Условие остановки внутреннего цикла
-       
         _asm
         {
-            mov eax, arr;       Ссылка на массив
-
+                mov eax, arr;       Ссылка на массив
             FirstCycleStart :
-
-            mov ebx, n
+                mov ebx, n
                 cmp currentIterFirst, ebx
                 je sortEnd
-
-                mov f, 0h
-                ;                       Описание внутреннего цикла
-            mov ebx, 0;                 Счётчик цикла 2
-
-                mov ecx, n
-                mov itersSecondCycle, ecx
-                mov ecx, currentIterFirst
-                sub itersSecondCycle, ecx
-
-                SecondCycleStart :
-            cmp ebx, itersSecondCycle
-
+                mov esi, 0
+                mov ebx, n
+                sub ebx, currentIterFirst
+                mov itersSecondCycle, ebx
+                mov ebx, 0;                 Счётчик цикла 2
+            SecondCycleStart :
+                cmp ebx, itersSecondCycle
                 je SecondCycleEnd;      Достигнут конец цикла
-
                 mov ecx, [eax + 4 * ebx]
-                mov edx, [eax + 4 * ebx + 4]
-                cmp ecx, edx;           Сравнение для смены местами
-
+                cmp ecx, [eax + 4 * ebx + 4];           Сравнение для смены местами
                 jg swap
                 ja swap
-
-                add ebx, 1
+                inc ebx
                 jmp SecondCycleStart
-
-                swap :
-            mov ecx, [eax + 4 * ebx]
+            swap :
+                mov ecx, [eax + 4 * ebx]
                 mov edx, [eax + 4 * ebx + 4]
                 mov[eax + 4 * ebx], edx
                 mov[eax + 4 * ebx + 4], ecx
-
-                add ebx, 1
-                mov f, 1h
+                inc ebx
+                mov esi, 1h
                 jmp SecondCycleStart
- 
-        SecondCycleEnd:
-
-            add currentIterFirst, 1h
-            cmp f, 0
-
+            SecondCycleEnd:
+                add currentIterFirst, 1h
+                cmp esi, 0
                 je sortEnd
-                jne FirstCycleStart
-
-        sortEnd:
+                jmp FirstCycleStart
+            sortEnd:
         }
-
-        return;
     }
 
     static void ArraySortShell(int* arr, int n)
@@ -84,30 +62,24 @@ public:
             mov eax, n
             mov edx, 0
             div n
-            mov ecx, eax; n/9
+            mov ecx, eax;   n/9
 
             FirstCycleStart :
-
             mov ebx, ecx
-                cmp h, ebx
-
-                jg goToSecondCycle
-                ja goToSecondCycle
+            cmp h, ebx
+            jg goToSecondCycle
+            ja goToSecondCycle
 
                 mov eax, 3h
                 mul h
                 add eax, 1h
                 mov h, eax
-
                 jmp FirstCycleStart
 
                 goToSecondCycle:
-
                 ;                       Описание внутреннего цикла while
-
                 SecondWhileCycleStart :
                 cmp h, 1h
-
                 jl StopWhileCycle
                 jb StopWhileCycle;      Достигнут конец цикла
 
@@ -115,9 +87,8 @@ public:
 
                     ThirdForCycleStart:
                 cmp ebx, n
-
-                    jge StopThirdForCycle
-                    jae StopThirdForCycle
+                jge StopThirdForCycle
+                jae StopThirdForCycle
 
                     mov ecx, ebx
                     sub ecx, h
@@ -125,22 +96,18 @@ public:
                     FourthForCycleStart:
 
                 cmp ecx, 0h
-
-                    jl StopFourthCycle
-                    jb StopFourthCycle
+                jl StopFourthCycle
+                jb StopFourthCycle
 
                     mov eax, arr;       Ссылка на массив
                     mov tempVar, ecx
                     add ecx, h
 
                     mov edx, [eax + 4 * ecx]
-
                     mov ecx, tempVar
-
-                    cmp[eax + 4 * ecx], edx
-
-                    jle StopFourthCycle
-                    jbe StopFourthCycle
+                cmp[eax + 4 * ecx], edx
+                jle StopFourthCycle
+                jbe StopFourthCycle
 
                     mov tempVar, ecx
                     add ecx, h
@@ -163,17 +130,14 @@ public:
                     mov ecx, tempVarTwo
 
                     sub ecx, h
-
                     jmp FourthForCycleStart
 
                     StopFourthCycle:
 
                 add ebx, 1h
-
-                    jmp ThirdForCycleStart
+                jmp ThirdForCycleStart
 
                     StopThirdForCycle:
-
                 mov eax, h
                     sub eax, 1h
 
@@ -181,12 +145,9 @@ public:
                     mov ecx, 3h
                     div ecx
                     mov h, eax
-
                     jmp SecondWhileCycleStart
-
                     StopWhileCycle :
         }
-
         return;
     }
 };

@@ -8,30 +8,29 @@ int main()
     fncptr = &AssemblerInsert::ArraySortBubble;
 
     srand(time(NULL));
-    int MyArr[10];
+    int MyArr[20];
     std::cout << "Bubble sort!\n\n";
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 20; i++)
     {
         MyArr[i] = rand() % 1000;
         std::cout << MyArr[i] << std::endl;
     }
-
     _asm
     {
         lea esi, [MyArr]
-        push 10
+        push 20
         push esi
         call fncptr
         add esp, 8
     }
     std::cout << "\n\n";
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 20; i++)
         std::cout << MyArr[i] << std::endl;
 
     std::cout << "\n\n";
     std::cout << "Shell sort!\n\n";
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 20; i++)
     {
         MyArr[i] = rand() % 1000;
         std::cout << MyArr[i] << std::endl;
@@ -41,13 +40,13 @@ int main()
     _asm
     {
         lea esi, [MyArr]
-        push 10
+        push 20
         push esi
         call fncptr
         add esp, 8
     }
     std::cout << "\n\n";
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 20; i++)
         std::cout << MyArr[i] << std::endl;
     system("Pause");
 }

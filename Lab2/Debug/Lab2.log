@@ -1,4 +1,4 @@
 ﻿  Lab2.cpp
-C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab2\AssemblerSort.h(192,2): warning C4091: 'static ': ignored on left of 'AssemblerInsert' when no variable is declared
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab2\AssemblerSort.h(153,2): warning C4091: 'static ': ignored on left of 'AssemblerInsert' when no variable is declared
 C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab2\Lab2.cpp(10,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Lab2.vcxproj -> C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Debug\Lab2.exe
