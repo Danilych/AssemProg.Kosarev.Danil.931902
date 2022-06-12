@@ -1,0 +1,56 @@
+﻿  Lab3.cpp
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(204,17): warning C4101: 'hdc': unreferenced local variable
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(206,17): warning C4101: 'ps': unreferenced local variable
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(322,50): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(327,54): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,52): warning C4838: conversion from 'Type' to 'FLOAT' requires a narrowing conversion
+          with
+          [
+              Type=LONG
+          ]
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(115): message : see reference to function template instantiation 'D2D1::TypeTraits<LONG>::Point D2D1::Point2<LONG>(Type,Type)' being compiled
+          with
+          [
+              Type=LONG
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,52): warning C4244: 'initializing': conversion from 'Type' to 'FLOAT', possible loss of data
+          with
+          [
+              Type=LONG
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,55): warning C4838: conversion from 'Type' to 'FLOAT' requires a narrowing conversion
+          with
+          [
+              Type=LONG
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,55): warning C4244: 'initializing': conversion from 'Type' to 'FLOAT', possible loss of data
+          with
+          [
+              Type=LONG
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,52): warning C4838: conversion from 'Type' to 'FLOAT' requires a narrowing conversion
+          with
+          [
+              Type=int
+          ]
+C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Lab3\Lab3.cpp(123): message : see reference to function template instantiation 'D2D1::TypeTraits<int>::Point D2D1::Point2<int>(Type,Type)' being compiled
+          with
+          [
+              Type=int
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,52): warning C4244: 'initializing': conversion from 'Type' to 'FLOAT', possible loss of data
+          with
+          [
+              Type=int
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,55): warning C4838: conversion from 'Type' to 'FLOAT' requires a narrowing conversion
+          with
+          [
+              Type=int
+          ]
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\d2d1helper.h(78,55): warning C4244: 'initializing': conversion from 'Type' to 'FLOAT', possible loss of data
+          with
+          [
+              Type=int
+          ]
+  Lab3.vcxproj -> C:\Users\Nix\Desktop\Tutorials\Course3\SysProg\AssemProg\Debug\Lab3.exe
