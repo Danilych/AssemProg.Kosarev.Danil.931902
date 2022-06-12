@@ -3,7 +3,7 @@
 //  1. Сделать функции Sin+, Cos, tg, ctg, asin, acos (Direct2D)
 //  2. Функции предлагаются в меню, не менее 4 функций
 //  3. Масштабируемость по горизонтальи и вертикали
-//  
+//  https://github.com/Danilych/AssemProg.Kosarev.Danil.931902 гитхаб навсякий случай
 #pragma comment(lib, "d2d1")
 #include <windows.h>
 #include <math.h>
@@ -13,11 +13,6 @@
 #define SAFE_RELEASE(P) if(P){P->Release() ; P = NULL ;}
 #define NUM    1000
 #define TWOPI  (2 * 3.14159)
-
-//struct StateInfo
-//{
-//    int currentFunctionId;
-//};
 
 int curFunc = 1;
 int curScale = 1;
@@ -175,17 +170,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     RegisterClass(&wndclass);
 
-    //Fucntion struct
-    //StateInfo* pState = new StateInfo;
-
-    //if (pState == NULL) return 0;
-
-
     hwnd = CreateWindow(L"FunctionWindow", TEXT("Functions Using Polyline"),
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT,
         CW_USEDEFAULT, CW_USEDEFAULT,
-        NULL, NULL, hInstance, NULL);//pState);
+        NULL, NULL, hInstance, NULL);
 
     ShowWindow(hwnd, iCmdShow);
     UpdateWindow(hwnd);
@@ -269,13 +258,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
         return 0;
 
     case WM_PAINT:
-        //hdc = BeginPaint(hwnd, &ps);
-
-        //MoveToEx(hdc, 0, cyClient / 2, NULL);
-        //LineTo(hdc, cxClient, cyClient / 2);
-
-        //MoveToEx(hdc, cxClient / 2, 0, NULL);
-        //LineTo(hdc, cxClient / 2, cyClient);
 
         for (i = 0; i < NUM; i++)
         {
@@ -306,8 +288,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         DrawLines(hwnd, cxClient, cyClient);
         
-        //Polyline(hdc, apt, NUM);
-        //EndPaint(hwnd, &ps);
         return 0;
 
     case WM_DESTROY:
