@@ -297,16 +297,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     return DefWindowProc(hwnd, message, wParam, lParam);
 }
 
-float FindIX(double x,int sizeX, int intX)
-{
-    return ((x + intX) * sizeX) / (-intX - intX) + (sizeX);
-}
-
-float FindJY(double y, int sizeY, int intY)
-{
-    return (((y + intY) * (sizeY)) / (-intY - intY)) + (sizeY);
-}
-
 void AddMenus(HWND hwnd)
 {
     //Up menu space
